@@ -4,7 +4,7 @@
     <title>Animal Information</title>
     <style>
         table{
-            border border-collapse: collapse;
+            border-collapse: collapse;
             width: 100%;
         }
 
@@ -29,22 +29,28 @@
 
             const animals = [ /*Creates animals array*/
                 { id:1, name: "Fluffy", owner: "Alice", weight: 12, age: 3}, /* first object */
-                { id:2, name: "Max", owner: "Bob", weight: 20, age: 5} /* second object */
-                { id:3, name: "Tommy", owner: "John", weight: 5, age: 0.5}
-                { id:4, name: "Raul", owner: "Joselito", weight: 6, age: 0.6}
-                { id:5, name: "Armando", owner: "Manuel", weight: 4, age: 0.4}
-                { id:6, name: "Agusto", owner: "Arthur", weight: 8, age: 0.8}
-                { id:7, name: "Eminem", owner: "Antonio", weight: 24, age: 7}
-                { id:8, name: "Miller", owner: "Drake", weight: 27, age: 9}
-                { id:9, name: "Angelo", owner: "Benedict", weight: 31, age: 11}
-                { id:10, name: "Raphael", owner: "Aaron", weight: 32, age: 12}
-                { id:11, name: "Victor", owner: "Sebastian", weight: 33, age: 13}
-                { id:12, name: "Joseph", owner: "Hans", weight: 34, age: 14}
-                { id:13, name: "Justin", owner: "Gabe", weight: 35, age: 16}
-                { id:14, name: "Micheal", owner: "Jose", weight: 36, age: 17}
-                { id:15, name: "Eren", owner: "Jeager", weight: 39, age: 18}
+                { id:2, name: "Max", owner: "Bob", weight: 20, age: 5}, /* second object */
+                { id:3, name: "Tommy", owner: "John", weight: 5, age: 0.5},
+                { id:4, name: "Raul", owner: "Joselito", weight: 6, age: 0.6},
+                { id:5, name: "Armando", owner: "Manuel", weight: 4, age: 0.4},
+                { id:6, name: "Agusto", owner: "Arthur", weight: 8, age: 0.8},
+                { id:7, name: "Eminem", owner: "Antonio", weight: 24, age: 7},
+                { id:8, name: "Miller", owner: "Drake", weight: 27, age: 9},
+                { id:9, name: "Angelo", owner: "Benedict", weight: 31, age: 11},
+                { id:10, name: "Raphael", owner: "Aaron", weight: 32, age: 12},
+                { id:11, name: "Victor", owner: "Sebastian", weight: 33, age: 13},
+                { id:12, name: "Joseph", owner: "Hans", weight: 34, age: 14},
+                { id:13, name: "Justin", owner: "Gabe", weight: 35, age: 16},
+                { id:14, name: "Micheal", owner: "Jose", weight: 36, age: 17},
+                { id:15, name: "Eren", owner: "Jeager", weight: 39, age: 18},
                 { id:16, name: "Manny", owner: "Ericka", weight: 41, age: 19}
             ];
+
+            for(let i = 0; i<animals.length; i++)
+            {
+                const animal = animals[i];
+                tableHTML += `<tr><td>${animal.id}</td><td>${animal.name}</td><td>${animal.owner}</td><td>${animal.weight}</td><td>${animal.age}</td></tr>`;
+            }
 
             tableHTML += '</table>'; /* closed table */
             document.getElementById('animal-table').innerHTML = tableHTML; /*gets the animal-table div and script and insert to the html*/
