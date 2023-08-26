@@ -25,7 +25,7 @@
     
     <script>
         let tableHTML = '<table>'; /* Assigns string '<table>' to let tableHTML*/
-            tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th></tr>'; /*Creates a row in tableHTML with different cells named Animal ID, Animal Name, Owner Name, Weight, Age*/
+            tableHTML += '<tr><th>Animal ID</th><th>Animal Name</th><th>Owner Name</th><th>Weight</th><th>Age</th><th>Age Bracket</th></tr>'; /*Creates a row in tableHTML with different cells named Animal ID, Animal Name, Owner Name, Weight, Age*/
 
             const animals = [ /*Creates animals array*/
                 { id:1, name: "Fluffy", owner: "Alice", weight: 12, age: 3}, /* first object */
@@ -49,7 +49,31 @@
             for(let i = 0; i<animals.length; i++)
             {
                 const animal = animals[i];
-                tableHTML += `<tr><td>${animal.id}</td><td>${animal.name}</td><td>${animal.owner}</td><td>${animal.weight}</td><td>${animal.age}</td></tr>`;
+                const AgeBracket = getAgeBracket(animal.age)
+                tableHTML += `<tr><td>${animal.id}</td><td>${animal.name}</td><td>${animal.owner}</td><td>${animal.weight}</td><td>${animal.age}</td><td>${AgeBracket}</td></tr>`;
+            }
+
+            function getAgeBracket(age)
+            {
+                if (age <= 0.9)
+                {
+                    return "Puppy";
+                }
+
+                else if (age >= 0.91 && age <= 10)
+                {
+                    return "Adult";
+                }
+
+                else if (age >= 10.1 && age <= 15)
+                {
+                    return "Senior";
+                }
+
+                else
+                {
+                    return "Geriatric";
+                }
             }
 
             tableHTML += '</table>'; /* closed table */
